@@ -2,6 +2,10 @@
 	@game = Bowling::Game.new
 end
 
+もし /^すべての投球が(\d+)ピンである$/ do |pins|
+  20.times { @game.roll(pins.to_i) }
+end
+
 もし /^すべての投球がガターである$/ do
 	20.times { @game.roll(0) }
 end
