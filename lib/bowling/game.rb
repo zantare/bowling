@@ -1,17 +1,14 @@
 module Bowling
 	class Game
     def initialize
-#			@score = 0
 			@rolls = []
 		end
 
 		def roll(pins)
-#			@score += pins
 			@rolls << pins
 		end
 
 		def score
-#			@score
       score = 0
 			roll_idx = 0
 			10.times do
