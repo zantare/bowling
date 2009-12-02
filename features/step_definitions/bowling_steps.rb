@@ -10,6 +10,11 @@ end
 	@game.roll(10)
 end
 
+もし /^スペアをとる$/ do
+	もし "5ピン倒す"
+	もし "5ピン倒す"
+end
+
 もし /^残りの投球(\d+)球がすべてガターである$/ do |roll_num|
 	roll_num.to_i.times { @game.roll(0) }
 end
