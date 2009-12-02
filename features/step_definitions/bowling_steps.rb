@@ -7,7 +7,7 @@ end
 end
 
 もし /^ストライクをとる$/ do
-	@game.roll(10)
+	もし "10ピン倒す"
 end
 
 もし /^スペアをとる$/ do
@@ -16,11 +16,15 @@ end
 end
 
 もし /^残りの投球(\d+)球がすべてガターである$/ do |roll_num|
-	roll_num.to_i.times { @game.roll(0) }
+	roll_num.to_i.times do
+		もし "0ピン倒す" 
+	end
 end
 
 もし /^すべての投球が(\d+)ピンである$/ do |pins|
-  20.times { @game.roll(pins.to_i) }
+	20.times do
+		もし "#{pins}ピン倒す"
+	end
 end
 
 もし /^すべての投球がガターである$/ do
